@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Chat</title>
+</head>
+<body>
+	<div class="chatApp">
+		<ul>
+			<li v-for="message in messages">
+				{{message}}
+			</li>
+		</ul>
+		
+		<!-- ДЛЯ ВЫВОДА ТЕКСТА ИЗ МОДЕЛИ, КОТОРЫЙ ПОПАДАЕТ ТУДА ИЗ ВВОДА В ПРИВЯЗАННЫЙ К МОДЕЛЕ ИНПУТ  -->
+		{{message}}
+		
+		<!-- ДЛЯ СОЗДАНИЯ ИНПУТА, ПРИВЯЗКИ ЕГО К ДАННЫМ ПОДЕЛИ И ПРИВЯЗКИ К НЕМУ СОБЫТИЯ НАЖАТИЯ КНОПКИ С ОБРАБОТЧИКОМ - ФУКЦИЕЙ ОПИСАННОЙ В МОДЕЛЕ -->
+		<input type="text" v-model="message" v-on:keydown="send">
+	</div>
+	
+	<!-- ДЛЯ ПОДКЛЮЧЕНИЯ VUE -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+	
+	<!-- ДЛЯ ПОДКЛЮЧЕНИЯ SOCKET -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.slim.js"></script>
+
+	<script>
+		// ДЛЯ ПОДКЛЮЧЕНИЯ МОДУЛЯ SOCKET
+		var socket = io();
+
+		// ДЛЯ ПОДКЛЮЧЕНИЯ МОДУЛЯ VUE
+		var chatApp = new Vue({
+			// ДЛЯ ПРИВЯЗКИ К БЛОКУ
+			el: '.chatApp',
+
+			// ДЛЯ ОПИСАНИЯ ДАННЫХ БЛОКА
+			data: {
+				// ДЛЯ МАССИВА СООБЩЕНИЙ
+				messages: [],
+				// ДЛЯ СООБЩЕНИЯ КОТОРОЕ ВВОДИТСЯ ПОЛЬЗОВАТЕЛЕМ
+				message: ''
+			},
+
+			// ДЛЯ ОПИСАНИЯ МЕТОДОВ БЛОКА
+			methods:{
+				// ДЛЯ ОТПРАВКИ СООБЩЕНИЯ
+				send: function (e) {
+					// ДЛЯ ОТПРАВКИ СООБЩЕНИЯ ПО НАЖАТИЮ ENTER
+					if(e.keyCode !== 13){
+						return;
+					}
+
+					// ДЛЯ ОТПРАВКИ СОБЫТИЯ И СООБЩЕНИЯ СЕРВЕРУ О НОВОМ СООБЩЕНИИ
+					socket.emit('message.sent', this.message);
+
+					// ДЛЯ ЗАТИРАНИЯ ИНПУТ ПОСЛЕ ОТПРАВКИ
+					this.message = '';
+				}
+			},
+
+			// ДЛЯ ОЖИДАНИЯ ЗАГРУЗКИ СТРАНИЦЫ
+			mounted: function () {
+
+				// ДЛЯ АСИНХРОННОЙ РАБОТЫ SETTIMEOUT 
+				this.$nextTick(() => {
+					// ДЛЯ ПРОСЛУШИВАНИЯ СОБЫТИЯ НА СЕРВЕРЕ - message
+          			socket.on('message', function (message) {
+          				// ДЛЯ ДОБАВЛЕНИЯ СООБЩЕНИЯ В МАССИВ СООБЩЕНИЙ
+						this.messages.push(message);
+					// ДЛЯ ПРИВЯЗКИ КОНТЕКСТА ЭТОГО БЛОКА
+					}.bind(this));
+      			});
+			}
+		});
+
+	</script>
+</body>
+</html>
