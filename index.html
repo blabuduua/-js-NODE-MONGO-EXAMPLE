@@ -3,25 +3,60 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Chat</title>
+	<style>
+	    body, html {
+            margin: 0;
+            color: #555;
+            font: 100% "Roboto";
+        }
+        
+        .chat {
+            width: 100%;
+        }
+
+        .chat__list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .chat__list-item {
+            padding: 10px;
+            font-size: .9em;
+        }
+
+        .chat__list-item:nth-child(odd) {
+            background-color: #f5f5f5;
+        }
+
+        .chat__input {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 10px;
+            border: 3px solid #f5f5f5;
+            font-size: .9em;
+        }
+	</style>
 </head>
 <body>
 	<div class="chatApp">
-		<ul>
-			<li v-for="message in messages">
+		<ul class="chat__list">
+			<li class="chat__list-item" v-for="message in messages">
 				{{message}}
 			</li>
 		</ul>
 		
 		<!-- ДЛЯ ВЫВОДА ТЕКСТА ИЗ МОДЕЛИ, КОТОРЫЙ ПОПАДАЕТ ТУДА ИЗ ВВОДА В ПРИВЯЗАННЫЙ К МОДЕЛЕ ИНПУТ  -->
-		{{message}}
+		<!-- {{message}} -->
 		
 		<!-- ДЛЯ СОЗДАНИЯ ИНПУТА, ПРИВЯЗКИ ЕГО К ДАННЫМ ПОДЕЛИ И ПРИВЯЗКИ К НЕМУ СОБЫТИЯ НАЖАТИЯ КНОПКИ С ОБРАБОТЧИКОМ - ФУКЦИЕЙ ОПИСАННОЙ В МОДЕЛЕ -->
-		<input type="text" v-model="message" v-on:keydown="send">
+		<input class="chat__input" type="text" v-model="message" v-on:keydown="send" placeholder="Введите сообщение...">
 	</div>
 	
 	<!-- ДЛЯ ПОДКЛЮЧЕНИЯ VUE -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
-	
+
 	<!-- ДЛЯ ПОДКЛЮЧЕНИЯ SOCKET -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.slim.js"></script>
 
