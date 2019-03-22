@@ -1,0 +1,22 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "node vue socket",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blabuduua/NODE.git"
+  },
+  "author": "mass.vk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blabuduua/NODE/issues"
+  },
+  "homepage": "https://github.com/blabuduua/NODE#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
