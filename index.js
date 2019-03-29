@@ -1,14 +1,8 @@
-const app = require('/app');
-
-app.get('/', function (req, res) {
-   console.log('Client connected');
-
-   res.status('200').json({
-      message : 'SeeLight',
-   });
-});
+const app = require('./app');
+const port = process.env.PORT || 8080;
 
 
-app.listen(3000, function () {
-    console.log('Server Started!');
+
+app.listen(port, function () {
+    console.log(`Server Started! on ${port}`);
 });
