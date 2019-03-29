@@ -4,11 +4,11 @@ const router = express.Router();
 
 router.get('/:categoryId', controller.getByCategoryId);
 
-router.post('/', controller.create);
+router.post('/', controller.createOne);
 
-router.patch('/:id', controller.update);
+router.patch('/:id', controller.updateById);
 
-router.delete('/:id', controller.remove);
+router.delete('/:id', controller.removeById);
 
 
 

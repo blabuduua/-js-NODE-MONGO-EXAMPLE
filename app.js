@@ -12,13 +12,18 @@ const keys = require('./config/keys');
 
 // ДЛЯ ПОДКЛЮЧЕНИЯ К МОНГО БД ПО УРЛ
 // ДЛЯ ДЕЙСТВИЙ ПОСЛЕ ПОДКЛЮЧЕНИЕ CONNECT ВОЗВЩАЕТ ПРОМИС .then ЕСЛИ ВСЁ ОК и .catch - ОШИБКА
-mongoose.connect(keys.mongoURI)
+mongoose.connect(keys.mongoURI, {useNewUrlParser: true })
     .then(function () {
         console.log('mongo db connected');
     })
     .catch(function (error) {
         console.log(`error mongo db connect ${error}`);
     });
+
+// ДЛЯ УБОРА ОШИБКИ, КОТОРАЯ РУГАЕТСЯ НА СОВПАДЕНИЕ ИМЁН
+// DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
+mongoose.set('useCreateIndex', true);
+
 
 // ДЛЯ ПОДКЛЮЧЕНИЯ МОДУЛЯ КОТОРЫЙ ДАЁТ ВОЗМОЖНОСТЬ ОТВЕЧАТЬ НА ЗАПРОСЫ ДРУГИХ ДОМЕНОВ
 const cors = require('cors');
