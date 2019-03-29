@@ -1,8 +1,24 @@
 // ДЛЯ ПОДКЛЮЧЕНИЯ МОДУЛЯ ЕКСПРЕСС
 const express = require('express');
 
+// ДЛЯ ПОДКЛЮЧЕНИЯ МОДУЛЯ УПРАВЛЕНИЯ БД ДЛЯ ПОДКЛЮЧЕНИЯ К БД
+const mongoose = require('mongoose');
+
 // ДЛЯ ПОДКЛЮЧЕНИЯ МОДУЛЯ ПОЛУЧЕНИЯ ДАННЫХ ОТПРАВЛЕННЫХ ПОЛЬЗОВАТЕЛЕМ
 const bodyParser = require('body-parser');
+
+// ДЛЯ ПОДКЛЮЧЕНИЕ КЛЮЧЕЙ ПОДКЛЮЧЕНИЯ К БД
+const keys = require('./config/keys');
+
+// ДЛЯ ПОДКЛЮЧЕНИЯ К МОНГО БД ПО УРЛ
+// ДЛЯ ДЕЙСТВИЙ ПОСЛЕ ПОДКЛЮЧЕНИЕ CONNECT ВОЗВЩАЕТ ПРОМИС .then ЕСЛИ ВСЁ ОК и .catch - ОШИБКА
+mongoose.connect(keys.mongoURI)
+    .then(function () {
+        console.log('mongo db connected');
+    })
+    .catch(function (error) {
+        console.log(`error mongo db connect ${error}`);
+    });
 
 // ДЛЯ ПОДКЛЮЧЕНИЯ МОДУЛЯ КОТОРЫЙ ДАЁТ ВОЗМОЖНОСТЬ ОТВЕЧАТЬ НА ЗАПРОСЫ ДРУГИХ ДОМЕНОВ
 const cors = require('cors');
@@ -16,7 +32,6 @@ const authorRoutes = require('./routes/author');
 const categoryRoutes = require('./routes/category');
 const orderRoutes = require('./routes/order');
 const positionRoutes = require('./routes/position');
-
 
 // ДЛЯ СОЗДАНИЯ ПРОЕКТА НА ОСНОВЕ ФРЕЙМВОРКА ЕКСПРЕСС
 var app = express();

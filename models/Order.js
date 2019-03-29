@@ -33,4 +33,4 @@ const orderSchema = new Schema({
 });
 
 // ДЛЯ СОЗДАНИЯ ДОКУМЕНТА В МОНГО ДБ И ПЕРЕДАЧЕ ЕЙ СХЕМЫ
-module.exports = mongoose.model('orders', userSchema);
+module.exports = mongoose.model('orders', orderSchema);
