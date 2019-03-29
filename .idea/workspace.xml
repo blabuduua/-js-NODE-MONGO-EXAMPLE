@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38d61565-f51d-4f39-9286-631b0a4b744b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/keys.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/author.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/author.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/category.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/category.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/position.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/position.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/author.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/author.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/category.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/category.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/position.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/position.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,9 +16,9 @@
         <entry file="file://$PROJECT_DIR$/controllers/author.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="496">
-              <caret line="21" column="2" lean-forward="true" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
               <folding>
-                <marker date="1553870058104" expanded="true" signature="113:212" ph="..." />
+                <marker date="1553870353766" expanded="true" signature="113:212" ph="..." />
               </folding>
             </state>
           </provider>
@@ -151,15 +141,16 @@
       <workItem from="1553263322305" duration="2297000" />
       <workItem from="1553847795420" duration="2223000" />
       <workItem from="1553851462482" duration="1136000" />
-      <workItem from="1553853692407" duration="11422000" />
+      <workItem from="1553853692407" duration="11670000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17078000" />
+    <option name="totallyTimeSpent" value="17326000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14026846" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -327,9 +318,9 @@
     <entry file="file://$PROJECT_DIR$/controllers/author.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="496">
-          <caret line="21" column="2" lean-forward="true" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
           <folding>
-            <marker date="1553870058104" expanded="true" signature="113:212" ph="..." />
+            <marker date="1553870353766" expanded="true" signature="113:212" ph="..." />
           </folding>
         </state>
       </provider>
