@@ -2,6 +2,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const keys = require('../config/keys');
+const errorsHandler = require('../utils/errorsHandler');
 
 module.exports.login = async function (req, res) {
     // ДЛЯ ПОИСКА ЕМАИЛА В БД (ОСТАЛЬНОЙ КОД ЖДЁТ ЗАВЕРШЕНИЯ СВЯЗИ С БД)
@@ -75,7 +76,7 @@ module.exports.register = async function (req, res) {
                 password: user.password
             });
         }catch (e) {
-            // ДЛЯ ОБРАБОТКИ ОШИБКИ
+            errorsHandler(res, e);
         }
     }
 };
