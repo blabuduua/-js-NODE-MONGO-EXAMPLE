@@ -4,6 +4,9 @@ const express = require('express');
 // ДЛЯ ПОДКЛЮЧЕНИЯ МОДУЛЯ УПРАВЛЕНИЯ БД ДЛЯ ПОДКЛЮЧЕНИЯ К БД
 const mongoose = require('mongoose');
 
+// ДЛЯ ПОДКЛЮЧЕНИЯ ПАСПОРТА ДЛЯ ЗАКРЫТИЯ РОУТОВ И ВОЗМОЖНОСТИ КРУТОЙ АВТОРИЗАЦИИ))
+const passport = require('passport');
+
 // ДЛЯ ПОДКЛЮЧЕНИЯ МОДУЛЯ ПОЛУЧЕНИЯ ДАННЫХ ОТПРАВЛЕННЫХ ПОЛЬЗОВАТЕЛЕМ
 const bodyParser = require('body-parser');
 
@@ -24,6 +27,13 @@ mongoose.connect(keys.mongoURI, {useNewUrlParser: true })
 // DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
 mongoose.set('useCreateIndex', true);
 
+// ДЛЯ СОЗДАНИЯ ПРОЕКТА НА ОСНОВЕ ФРЕЙМВОРКА ЕКСПРЕСС
+const app = express();
+
+// ДЛЯ ИСПОЛЬЗОВАНИЯ ПАССПОРТА
+app.use(passport.initialize());
+// ДЛЯ ПОДКЛЮЧЕНИЯ ПОСРЕДНИКА - ЗАЩИТНИКА РОУТОВ
+require('./middleware/passport')(passport);
 
 // ДЛЯ ПОДКЛЮЧЕНИЯ МОДУЛЯ КОТОРЫЙ ДАЁТ ВОЗМОЖНОСТЬ ОТВЕЧАТЬ НА ЗАПРОСЫ ДРУГИХ ДОМЕНОВ
 const cors = require('cors');
@@ -37,9 +47,6 @@ const authorRoutes = require('./routes/author');
 const categoryRoutes = require('./routes/category');
 const orderRoutes = require('./routes/order');
 const positionRoutes = require('./routes/position');
-
-// ДЛЯ СОЗДАНИЯ ПРОЕКТА НА ОСНОВЕ ФРЕЙМВОРКА ЕКСПРЕСС
-var app = express();
 
 // ДЛЯ ПОДКЛЮЧЕНИЯ МОДУЛЯ КОТОРЫЙ ДЕЛАЕТ ЛОГИРОВАНИЕ ЗАПРОСОВ В РЕЖИМЕ РАЗРАБОТКИ
 app.use(morgan('dev'));
