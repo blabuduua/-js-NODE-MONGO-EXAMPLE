@@ -43,8 +43,6 @@ module.exports.removeById = async function (req, res) {
 };
 
 module.exports.createOne = async function (req, res) {
-    console.log(req.file);
-
     const сategory = new Category({
         name: req.body.name,
         imageSrc: req.file ? req.file.path : '',
@@ -61,8 +59,22 @@ module.exports.createOne = async function (req, res) {
 };
 
 module.exports.updateById = async function (req, res) {
-    try {
+    const updated = {
+        name: req.body.name
+    };
 
+    if(req.file){
+        updated.imageSrc = req.file.path;
+    }
+
+    try {
+        const category = await Category.findOneAndUpdate(
+            {_id: req.params.id},
+            {$set: updated},
+            {new: true}
+        );
+
+        res.status(200).json(category);
     }catch (e) {
         errorsHandler(res, e);
     }
