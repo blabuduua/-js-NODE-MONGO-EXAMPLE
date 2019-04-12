@@ -7,8 +7,8 @@ module.exports.getAll = async function (req, res) {
     // ДЛЯ ХРАНЕНИЯ ЗАПРОСА К БД
     const query = {
         // ДЛЯ СБОРА ВСЕХ ЗАКАЗОВ КОТОРІЕ СОЗДАЛ ЮЗЕР ЗАПРАШИВАЮЩИЙ ЄТОТ РОУТ
-        user: req.user.id,
-    }
+        user: req.user.id
+    };
 
     // ДЛЯ ГЕНЕРАЦИИ ЗАПРОСА НА ХОДУ В ЗАВИСИМОСТИ ОТ ПАРАМЕТРОВ ЗАПРОСА
 
@@ -19,7 +19,7 @@ module.exports.getAll = async function (req, res) {
         query.date = {
             // ДЛЯ ИСПОЛЬЗОВАНИЯ ФИЛЬТРА МОНГУС $gte grater/equal БОЛЬШЕ ИЛИ РАВНО
             $gte: req.query.start
-        }
+        };
     }
 
     // ДЛЯ ПОИСКА ДАТІ КОНЦА В ЗАПРОСЕ, ЧТО БУДЕТ ОЗНАЧАТЬ КОНЕЧНУЮ ДАТУ СОЗДАНИЯ ЗАПИСИ,
@@ -28,25 +28,25 @@ module.exports.getAll = async function (req, res) {
 // ДЛЯ ПРОВЕРКИ ОТРАБОТАЛА ЛИ ПРЕДІДУЩАЯ ПРОВЕРКА И СФОРМИРОВАН ЛИ ОБЬЕКТ query.date ДЛЯ ЗАПРОСА
         if(!query.date){
             // ДЛЯ СОЗДАНИЯ ПУСТОГО ОБЬЕКТА ДАТЫ
-            query.date = {}
+            query.date = {};
         }
 
 // ДЛЯ ОБРАЩЕНИЯ К ОБЬЕКТУ ДАТЫ МОГУС ПРЕДСОЗДАЛ СВОЙСТВА ОБЬЕКТА К КОТОРЫМ МВ МОЖЕМ ОБРАТИТСЯ
 
         // ДЛЯ ОБРАЩЕНИЯ К СВОЙСТВУ ФИЛЬТРА МОГУС $lte lower/equal МЕНЬШЕ ИЛИ РАВНО
-        query.date['$lte'] = req.query.end
+        query.date['$lte'] = req.query.end;
 
         // ДЛЯ ЗАПИСИ В ДИНАМИЧЕСКИ ФОРМИРУЮЩЕЮСЯ ЗАПРОС
         query.date = {
             // ДЛЯ ИСПОЛЬЗОВАНИЯ ФИЛЬТРА МОНГУС $gte grater/equal БОЛЬШЕ ИЛИ РАВНО
             $gte: req.query.end
-        }
+        };
     }
 
     // ДЛЯ ПРОВЕРКИ ОТПРАВЕЛ ЛИ КОНКРЕТНЫЙ НОМЕР ЗАКАЗА ДЛЯ ОТОБРАЖЕНИЯ
     if(req.query.order){
         // ДЛЯ ДОБАВЛЕНИЕ В КОНСТРУКТОР ЗАПРОСА КЛЮЧА ФОЛЬТРА С НОМЕРОМ ЗАКАЗ
-        query.order = +req.query.order
+        query.order = +req.query.order;
     }
 
     try {
@@ -66,10 +66,10 @@ module.exports.getAll = async function (req, res) {
             .skip(+req.query.offset)
 
             // ДЛЯ ПАГИНАЦИИ ЗАБИРАЕМ УСТАНОВЛЕННІЙ ЛИМИТ ЗАПИСЕЙ ДЛЯ ВОЗВРАТА
-            .limit(+req.query.limit)
+            .limit(+req.query.limit);
 
         // ДЛЯ ВОРМИРОВАНИЯ И ОТПРАВКИ ОТВЕТА C РЕЗУЛЬТАТОМ СБОРА ВСЕХ ЗАКАЗОВ
-        res.status('200').json(orders)
+        res.status('200').json(orders);
 
     }catch (e) {
         errorHandler(res, e);
@@ -85,14 +85,14 @@ module.exports.createOne = async function (req, res) {
         .sort({
             // ДЛЯ СОРТИРОВКИ ПО ПОЛЮ ДАТІ ПО УБІВАНИЮ (Т.Е. САМІЙ ПОСЛЕДНИЙ ЕЛЕМЕНТ)
             date: -1
-        })
+        });
 
     // ДЛЯ ПРОВЕРКИ ЕСТЬ ЛИ В БД ХОТЬ ОДНА ЗАПИСЬ С ЗАКАЗОМ
     // ЕСЛИ ЕСТЬ, ЗНАЧИТ ЄТО ПОСЛЕДНИЙ - ПРИСВАИВАЕМ МАКСИМАЛЬНОМУ ЗНАЧЕНИЮ ЕГО АЙДИ
     // ДАЛЕЕ ПРИ СОХРАНЕНИИ МІ УВЕЛИЧИМ ЕГО НА 1
     // ЕСЛИ НЕТ, ЗНАЧИТ ЄТО ПЕРВАЯ ЗАПИСЬ - УКАЗІВАЕМ ПЕРВІЙ НОМЕР 0
     // ДАЛЕЕ ПРИ СОХРАНЕНИИ МІ УВЕЛИЧИМ ЕГО НА 1
-    const maxOrder = lastOrder ? lastOrder.order : 0
+    const maxOrder = lastOrder ? lastOrder.order : 0;
 
     try {
         // ДЛЯ СОЗДАНИЯ НОВОГО ОБЬЕКТА МОДЕЛИ И ПЕРЕДАЧИ ЕЙ ВСЕХ ЗАТРЕБОВАННЫХ ПОЛЕЙ
@@ -106,14 +106,14 @@ module.exports.createOne = async function (req, res) {
             user: req.user.id,
 
             // ДЛЯ УКАЗАНИЯ НОМЕРА ТЕКУЩЕГО ЗАКАЗА (АВТОМАТИЧЕСКОГО АВТОИНКРЕМЕНТА НЕТ)
-            order: maxOrder + 1,
+            order: maxOrder + 1
 
             // ДЛЯ СОХРАНЕНИЯ ЕКЗЕМПЛЯРА МОДЕЛИ
         }).save();
 
         //ДЛЯ ВЫДАЧИ ОТВЕТА ПОСЛЕ СОХРАНЕНИЯ,
         // ДЛЯ ДАЛЬНЕЙШЕГО ИСПОЛЬЗОВАНИЯ ОТДАЁМ СОЗДАННЫЙ ОБЬЕКТ ORDER
-        res.status('201').json(order)
+        res.status('201').json(order);
     }catch (e) {
         errorHandler(res, e);
     }
