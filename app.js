@@ -73,7 +73,7 @@ app.use(bodyParser.json());
 // ДЛЯ ПОДКЛЮЧЕНИЯ МОДУЛЯ КОТОРЫЙ ДАЁТ ВОЗМОЖНОСТЬ ОТВЕЧАТЬ НА ЗАПРОСЫ ДРУГИХ ДОМЕНОВ
 app.use(cors());
 
-// ДЛЯ ИСПОЛЬЗОВАНИЯ РОУТОВ
+// ДЛЯ ИСПОЛЬЗОВАНИЯ (РЕГИСТРАЦИИ) РОУТОВ
 app.use('/api/analytics', analyticsRoutes);
 app.use('/api/author', authorRoutes);
 app.use('/api/category', categoryRoutes);
