@@ -43,7 +43,7 @@ const morgan = require('morgan');
 
 // ДЛЯ ПОДКЛЮЧЕНИЯ ФАЙЛОВ С РОУТАМИ
 const analyticsRoutes = require('./routes/analytics');
-const authorRoutes = require('./routes/author');
+const authRoutes = require('./routes/auth');
 const categoryRoutes = require('./routes/category');
 const orderRoutes = require('./routes/order');
 const positionRoutes = require('./routes/position');
@@ -75,7 +75,7 @@ app.use(cors());
 
 // ДЛЯ ИСПОЛЬЗОВАНИЯ (РЕГИСТРАЦИИ) РОУТОВ
 app.use('/api/analytics', analyticsRoutes);
-app.use('/api/author', authorRoutes);
+app.use('/api/auth', authRoutes);
 app.use('/api/category', categoryRoutes);
 app.use('/api/order', orderRoutes);
 app.use('/api/position', positionRoutes);

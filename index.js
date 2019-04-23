@@ -2,7 +2,7 @@
 const app = require('./app');
 
 // ДЛЯ ИСПОЛЬЗОВАНИЯ ПОРТА ИЗ НАСТРОЕК ИЛИ 8080 ПО УМОЛЧАНИЮ
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 
 
 // ДЛЯ ЗАПУСКА ПРИЛОЖЕНИЯ
