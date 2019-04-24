@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38d61565-f51d-4f39-9286-631b0a4b744b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/client/src/app/shared/classes/token.interseptor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/shared/classes/token.interseptor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/shared/classes/material.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/shared/classes/material.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/shared/layouts/site-layout/site-layout.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/shared/layouts/site-layout/site-layout.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/shared/layouts/site-layout/site-layout.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/shared/layouts/site-layout/site-layout.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/theme/fullstack-theme-master/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/theme/fullstack-theme-master/overview.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,13 +32,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/app/shared/classes/token.interseptor.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
               <caret line="37" column="39" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/login-page/login-page.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23">
+              <caret line="46" selection-start-line="46" selection-end-line="46" />
+              <folding>
+                <element signature="e#0#59#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/shared/layouts/site-layout/site-layout.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="31" column="39" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/app/shared/classes/material.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/app/shared/layouts/site-layout/site-layout.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="27" column="61" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
+              <folding>
+                <element signature="e#0#55#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,14 +141,18 @@
         <option value="$PROJECT_DIR$/client/src/app/register-page/register-page.component.html" />
         <option value="$PROJECT_DIR$/client/src/app/shared/services/auth.service.ts" />
         <option value="$PROJECT_DIR$/client/src/app/shared/classes/auth.guard.ts" />
-        <option value="$PROJECT_DIR$/client/src/app/app-routing.module.ts" />
         <option value="$PROJECT_DIR$/client/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/client/package.json" />
         <option value="$PROJECT_DIR$/client/src/app/app.component.ts" />
-        <option value="$PROJECT_DIR$/client/src/app/shared/classes/material.service.ts" />
-        <option value="$PROJECT_DIR$/client/src/app/login-page/login-page.component.ts" />
         <option value="$PROJECT_DIR$/client/src/app/register-page/register-page.component.ts" />
         <option value="$PROJECT_DIR$/client/src/app/shared/classes/token.interseptor.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/login-page/login-page.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/app-routing.module.ts" />
+        <option value="$PROJECT_DIR$/client/src/index.html" />
+        <option value="$PROJECT_DIR$/client/src/theme/fullstack-theme-master/overview.html" />
+        <option value="$PROJECT_DIR$/client/src/app/shared/layouts/site-layout/site-layout.component.html" />
+        <option value="$PROJECT_DIR$/client/src/app/shared/layouts/site-layout/site-layout.component.ts" />
+        <option value="$PROJECT_DIR$/client/src/app/shared/classes/material.service.ts" />
       </list>
     </option>
   </component>
@@ -164,14 +216,6 @@
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="register-page" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NODE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NODE" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="shared" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -182,6 +226,40 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="shared" type="462c0819:PsiDirectoryNode" />
               <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NODE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NODE" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NODE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NODE" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+              <item name="site-layout" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NODE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NODE" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="theme" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NODE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NODE" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="theme" type="462c0819:PsiDirectoryNode" />
+              <item name="fullstack-theme-master" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -236,18 +314,17 @@
       <workItem from="1555932226334" duration="893000" />
       <workItem from="1556003138740" duration="9820000" />
       <workItem from="1556013629260" duration="9091000" />
-      <workItem from="1556091148784" duration="6081000" />
+      <workItem from="1556091148784" duration="11182000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80239000" />
+    <option name="totallyTimeSpent" value="85340000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20872483" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20872483" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -260,7 +337,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" x="0" y="23" width="1536" height="801" id="Terminal" order="10" type="WINDOWED" visible="true" weight="0.33282208" />
+      <window_info active="true" anchor="bottom" x="0" y="23" width="1536" height="801" id="Terminal" order="10" type="WINDOWED" visible="true" weight="0.33282208" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.3286119" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -273,19 +350,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/routes/position.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/theme/fullstack-theme-master/history.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/theme/fullstack-theme-master/styles/styles.min.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/karma.conf.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-324">
@@ -350,9 +414,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/app.component.css" />
-    <entry file="file://$PROJECT_DIR$/client/src/theme/fullstack-theme-master/overview.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/app.component.html" />
     <entry file="file://$PROJECT_DIR$/client/src/theme/fullstack-theme-master/login.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -512,16 +573,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/app-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/shared/services/auth.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
@@ -556,23 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/shared/classes/material.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="23" lean-forward="true" selection-start-line="2" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/login-page/login-page.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="61" column="16" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/register-page/register-page.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
@@ -590,6 +624,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="88" lean-forward="true" selection-start-line="6" selection-start-column="88" selection-end-line="6" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/shared/classes/token.interseptor.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -597,6 +638,57 @@
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/theme/fullstack-theme-master/overview.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="15" selection-start-line="15" selection-end-line="18" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/app-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/login-page/login-page.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/shared/layouts/site-layout/site-layout.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="31" column="39" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/shared/layouts/site-layout/site-layout.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="27" column="61" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/shared/classes/material.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
         </state>
       </provider>
     </entry>
