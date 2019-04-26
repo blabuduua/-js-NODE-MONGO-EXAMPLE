@@ -43,16 +43,16 @@ module.exports.removeById = async function (req, res) {
 };
 
 module.exports.createOne = async function (req, res) {
-    const сategory = new Category({
+    const category = new Category({
         name: req.body.name,
         imageSrc: req.file ? req.file.path : '',
         user: req.user.id
     });
 
     try {
-        await сategory.save();
+        await category.save();
 
-        res.status(201).json(сategory);
+        res.status(201).json(category);
     }catch (e) {
         errorsHandler(res, e);
     }
