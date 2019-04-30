@@ -9,7 +9,10 @@ const mongoose = require('mongoose');
 
 // ДЛЯ ПОДКЛЮЧЕНИЯ ЛОГЕРА
 const morgan = require('morgan');
-app.use(morgan('dev'));
+
+
+// ДЛЯ ПОДКЛЮЧЕНИ МОДУЛЯ ДЛЯ РАЗБИВКИ ЕКСПРЕСОМ ЗАПРОСА REQ.BODY
+const bodyParser = require('body-parser');
 
 
 // ДЛЯ ПОДКЛЮЧЕНИЯ ФАЙЛА НАСТРОЕК
@@ -36,6 +39,11 @@ const testMiddleware = (req, res, next) => {
 };
 // app.use(testMiddleware);
 
+
+// ДЛЯ ИСПОЛЬЗОВАНИЯ ЛОГЕРА В РЕЖИМЕ РАЗРАБОКИ
+app.use(morgan('dev'));
+
+app.use(bodyParser.json());
 
 // ДЛЯ ПОДКЛЮЧЕНИЯ КОНТРОЛЛЕРОВ И ОПРЕДЕЛЕНИЯ РОУТОВ
 const routesPost = require('./routes/routes_post');

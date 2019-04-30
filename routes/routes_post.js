@@ -10,6 +10,7 @@ const router = express.Router();
 
 // ДЛЯ НАЗНАЧЕНИЯ КОНТРОЛЛЕРА И ФУНКЦИИ РОУТУ
 router.get('/', controllersPost.getPosts);
+router.post('/post', controllersPost.createPost);
 
 
 // ДЛЯ ЭКСПОРТА ОБРАБОТАННОГО ОБЬЕКТА РОУТЕР
