@@ -15,6 +15,10 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
 
+// ДЛЯ ПОДКЛЮЧЕНИЯ EXPRESS-VALIDATOR ДЛЯ ОТЛОВА ОШИБОК ВАЛИДАЦИЙ ФОРМ
+const expressValidator = require('express-validator');
+
+
 // ДЛЯ ПОДКЛЮЧЕНИЯ ФАЙЛА НАСТРОЕК
 const dotenv = require('dotenv');
 dotenv.config();
@@ -40,14 +44,26 @@ const testMiddleware = (req, res, next) => {
 // app.use(testMiddleware);
 
 
+// =============================================================================
+// START MIDDLEWARE
+// =============================================================================
+
 // ДЛЯ ИСПОЛЬЗОВАНИЯ ЛОГЕРА В РЕЖИМЕ РАЗРАБОКИ
 app.use(morgan('dev'));
 
+// ДЛЯ ИСПОЛЬЗОВАНИЯ ПАРСЕРА JSON ДАННЫХ ПРИШЕДШИХ ПО API
 app.use(bodyParser.json());
+
+// ДЛЯ ИСПОЛЬЗОВАНИЯ ПЕРЕХВАТЧИКА ОШИБОК ВАЛИДАЦИИ ФОРМ
+app.use(expressValidator());
 
 // ДЛЯ ПОДКЛЮЧЕНИЯ КОНТРОЛЛЕРОВ И ОПРЕДЕЛЕНИЯ РОУТОВ
 const routesPost = require('./routes/routes_post');
 app.use('/', routesPost);
+
+// =============================================================================
+// END MIDDLEWARE
+// =============================================================================
 
 
 // ДЛЯ ОПРЕДЕЛЕНИЯ ПОРТА И ЗАПУСКА СЕРВЕРА
