@@ -2,7 +2,7 @@
 const express = require('express');
 
 // ДЛЯ ПОДКЛЮЧЕНИЯ КОНТРОЛЛЕРА
-const controllersPost = require('../controllers/controllers_post');
+const {getPosts, createPost} = require('../controllers/controllers_post');
 
 // ДЛЯ ПОДКЛЮЧЕНИЯ ВАЛИДАТОРА ФОРМЫ ПОСТА
 const validator = require('../validators/validators_post');
@@ -12,8 +12,8 @@ const router = express.Router();
 
 
 // ДЛЯ НАЗНАЧЕНИЯ КОНТРОЛЛЕРА И ФУНКЦИИ РОУТУ
-router.get('/', controllersPost.getPosts);
-router.post('/post', validator.createPostValidator, controllersPost.createPost);
+router.get('/', getPosts);
+router.post('/post', validator.createPostValidator, createPost);
 
 
 // ДЛЯ ЭКСПОРТА ОБРАБОТАННОГО ОБЬЕКТА РОУТЕР
