@@ -5,7 +5,7 @@ const express = require('express');
 const { requireSignin } = require('../controllers/controllers_auth');
 
 // ДЛЯ ПОИСКА ВО ВСЕХ УРЛ :userId, чтобы подсунуть в запрос обьект авторизированного юзера
-const { userById, allUsers } = require('../controllers/controllers_user');
+const { userById, allUsers, getUser } = require('../controllers/controllers_user');
 
 // ДЛЯ ИСПОЛЬЗОВАНИЯ РОУТЕРА ЕКСПРЕСС
 const router = express.Router();
@@ -14,6 +14,7 @@ const router = express.Router();
 
 // works routes
 router.get('/users', requireSignin, allUsers);
+router.get('/user/:userId', requireSignin, getUser);
 
 router.param('userId', userById);
 

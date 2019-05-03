@@ -41,3 +41,7 @@ exports.allUsers = (req, res) => {
         res.json({ users });
     }).select('name email');
 };
+
+exports.getUser = (req, res) => {
+    return res.json(req.profile);
+};
