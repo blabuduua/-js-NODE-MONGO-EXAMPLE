@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44579114-da03-41cb-baee-83b71bca4e5f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/validators/validators_user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/controllers_auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/controllers_auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/routes_auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes_auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/routes_post.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes_post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validators/validators_post.js" beforeDir="false" afterPath="$PROJECT_DIR$/validators/validators_post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,29 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="64" column="25" lean-forward="true" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/routes_post.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/routes_auth.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="486">
+              <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -86,21 +64,6 @@
               <item name="NODE" type="b2602c69:ProjectViewProjectNode" />
               <item name="NODE" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="NODE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NODE" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NODE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NODE" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NODE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NODE" type="462c0819:PsiDirectoryNode" />
-              <item name="validators" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -141,12 +104,12 @@
       <workItem from="1556196928327" duration="3373000" />
       <workItem from="1556261346311" duration="9659000" />
       <workItem from="1556629710495" duration="3832000" />
-      <workItem from="1556798634540" duration="11227000" />
+      <workItem from="1556798634540" duration="11998000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28091000" />
+    <option name="totallyTimeSpent" value="28862000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -246,13 +209,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="64" column="25" lean-forward="true" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/routes_auth.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -262,8 +218,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/routes_post.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state>
+          <caret column="4" selection-start-column="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
         </state>
       </provider>
     </entry>

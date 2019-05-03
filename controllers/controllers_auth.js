@@ -1,3 +1,8 @@
+const jwt = require('jsonwebtoken');
+
+// ДЛЯ ПОДКЛЮЧЕНИЯ ФАЙЛА НАСТРОЕК
+require('dotenv').config();
+
 const User = require('../models/models_user');
 
 
