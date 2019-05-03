@@ -13,7 +13,7 @@ const router = express.Router();
 // ДЛЯ НАЗНАЧЕНИЯ КОНТРОЛЛЕРА И ФУНКЦИИ РОУТУ
 
 // works routes
-router.get('/users', requireSignin, allUsers);
+router.get('/users', allUsers);
 router.get('/user/:userId', requireSignin, getUser);
 
 router.param('userId', userById);
