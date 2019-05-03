@@ -11,8 +11,12 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 
 
-// ДЛЯ ПОДКЛЮЧЕНИ МОДУЛЯ ДЛЯ РАЗБИВКИ ЕКСПРЕСОМ ЗАПРОСА REQ.BODY
+// ДЛЯ ПОДКЛЮЧЕНИЯ МОДУЛЯ ДЛЯ РАЗБИВКИ ЕКСПРЕСОМ ЗАПРОСА REQ.BODY
 const bodyParser = require('body-parser');
+
+
+// ДЛЯ ПОДКЛЮЧЕНИЯ МОДУЛЯ ДЛЯ РАЗБОРА COOKIE
+const cookieParser = require('cookie-parser');
 
 
 // ДЛЯ ПОДКЛЮЧЕНИЯ EXPRESS-VALIDATOR ДЛЯ ОТЛОВА ОШИБОК ВАЛИДАЦИЙ ФОРМ
@@ -53,6 +57,9 @@ app.use(morgan('dev'));
 
 // ДЛЯ ИСПОЛЬЗОВАНИЯ ПАРСЕРА JSON ДАННЫХ ПРИШЕДШИХ ПО API
 app.use(bodyParser.json());
+
+// ДЛЯ ИСПОЛЬЗОВАНИЯ ПАРСЕРА COOKIE
+app.use(cookieParser());
 
 // ДЛЯ ИСПОЛЬЗОВАНИЯ ПЕРЕХВАТЧИКА ОШИБОК ВАЛИДАЦИИ ФОРМ
 app.use(expressValidator());
