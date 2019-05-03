@@ -61,6 +61,9 @@ app.use(expressValidator());
 const routesPost = require('./routes/routes_post');
 app.use('/', routesPost);
 
+const routesAuth = require('./routes/routes_auth');
+app.use('/', routesAuth);
+
 // =============================================================================
 // END MIDDLEWARE
 // =============================================================================
