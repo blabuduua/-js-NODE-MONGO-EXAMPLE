@@ -3,6 +3,9 @@ const jwt = require('jsonwebtoken');
 // ДЛЯ ПОДКЛЮЧЕНИЯ ФАЙЛА НАСТРОЕК
 require('dotenv').config();
 
+// ДЛЯ ПОДКЛЮЧЕНИЯ ВАЛИДАТОРА JWT ТОКЕНА
+const expressJwt = require('express-jwt');
+
 const User = require('../models/models_user');
 
 
@@ -40,7 +43,7 @@ exports.signup = async (req, res) => {
 };
 
 // ДЛЯ АВТОРИЗАЦИИ ПОЛЬЗОВАТЕЛЯ
-exports.singin = async (req, res) => {
+exports.signin = async (req, res) => {
 
     // find the user based on email
     const { email, password } = req.body;
@@ -60,7 +63,7 @@ exports.singin = async (req, res) => {
         if(!user.authenticate(password)){
 
             return res.status(401).json({
-                error: 'Email and p'
+                error: 'Email and password do not match'
             });
         }
 
@@ -77,3 +80,15 @@ exports.singin = async (req, res) => {
         return res.json({ token, user: { _id, name, email } });
     });
 };
+
+// ДЛЯ  ВЫХОДА ПОЛЬЗОВАТЕЛЯ
+exports.signout = (req, res) => {
+    res.clearCookie('t');
+
+    return res.json({ message: 'Singout success!' });
+};
+
+// ДЛЯ ПРОВЕРКИ АВТОРИЗАЦИИ
+exports.requireSignin = expressJwt({
+    secret: process.env.JWT_SECRET
+});
