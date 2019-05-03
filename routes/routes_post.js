@@ -18,7 +18,7 @@ const router = express.Router();
 
 
 // ДЛЯ НАЗНАЧЕНИЯ КОНТРОЛЛЕРА И ФУНКЦИИ РОУТУ
-router.get('/', requireSignin, getPosts);
+router.get('/', getPosts);
 router.post('/post', requireSignin, createPostValidator, createPost);
 
 

@@ -71,6 +71,9 @@ app.use('/', routesPost);
 const routesAuth = require('./routes/routes_auth');
 app.use('/', routesAuth);
 
+const routesUser = require('./routes/routes_user');
+app.use('/', routesUser);
+
 // ДЛЯ ОБРАБОТКИ ОШИБКИ ПРИ ОТСУТСВИИ ТОКЕНА
 app.use(function (err, req, res, next) {
     if (err.name === 'UnauthorizedError') {

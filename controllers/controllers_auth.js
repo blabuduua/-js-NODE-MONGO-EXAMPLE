@@ -9,18 +9,6 @@ const expressJwt = require('express-jwt');
 const User = require('../models/models_user');
 
 
-// ДЛЯ ЭКСПОРТА ФУНКЦИИ ВОЗВРАТА ВСЕХ ПОЛЬЗОВАТЕЛЕЙ
-exports.getUsers = (req, res) => {
-    const user = User.find()
-        .select("_id name email password")
-        .then((users) => {
-            res.json({
-                users
-            });
-        })
-        .catch(err => console.log(err));
-};
-
 // ДЛЯ РЕГИСТРАЦИИ ПОЛЬЗОВАТЕЛЯ
 exports.signup = async (req, res) => {
 
