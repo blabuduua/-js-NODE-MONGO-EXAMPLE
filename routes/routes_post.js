@@ -7,6 +7,9 @@ const { getPosts, createPost } = require('../controllers/controllers_post');
 // ДЛЯ ПОДКЛЮЧЕНИЯ ФУНКЦИИ ДЛЯ ПРОВЕРКИ АВТОРИЗИРОВАННОСТИ ПОЛЬЗОВАТЕЛЯ
 const { requireSignin } = require('../controllers/controllers_auth');
 
+// ДЛЯ ПОИСКА ВО ВСЕХ УРЛ :userId, чтобы подсунуть в запрос обьект авторизированного юзера
+const { userById } = require('../controllers/controllers_user');
+
 // ДЛЯ ПОДКЛЮЧЕНИЯ ВАЛИДАТОРА ФОРМЫ ПОСТА
 const { createPostValidator } = require('../validators/validators_post');
 
@@ -17,6 +20,10 @@ const router = express.Router();
 // ДЛЯ НАЗНАЧЕНИЯ КОНТРОЛЛЕРА И ФУНКЦИИ РОУТУ
 router.get('/', requireSignin, getPosts);
 router.post('/post', requireSignin, createPostValidator, createPost);
+
+
+// any rout containing :userId, our app will first execute userBiId()
+router.param('userId', userById);
 
 
 // ДЛЯ ЭКСПОРТА ОБРАБОТАННОГО ОБЬЕКТА РОУТЕР

@@ -71,6 +71,13 @@ app.use('/', routesPost);
 const routesAuth = require('./routes/routes_auth');
 app.use('/', routesAuth);
 
+// ДЛЯ ОБРАБОТКИ ОШИБКИ ПРИ ОТСУТСВИИ ТОКЕНА
+app.use(function (err, req, res, next) {
+    if (err.name === 'UnauthorizedError') {
+        res.status(401).json({ error: 'Unauthorized!' });
+    }
+});
+
 // =============================================================================
 // END MIDDLEWARE
 // =============================================================================
