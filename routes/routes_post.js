@@ -5,7 +5,10 @@ const express = require('express');
 const {
     getPosts,
     createPost,
-    postsByUser } = require('../controllers/controllers_post');
+    postsByUser,
+    postById,
+    isPoster,
+    deletePost } = require('../controllers/controllers_post');
 
 // ДЛЯ ПОДКЛЮЧЕНИЯ ФУНКЦИИ ДЛЯ ПРОВЕРКИ АВТОРИЗИРОВАННОСТИ ПОЛЬЗОВАТЕЛЯ
 const { requireSignin } = require('../controllers/controllers_auth');
@@ -23,7 +26,6 @@ const router = express.Router();
 // ДЛЯ НАЗНАЧЕНИЯ КОНТРОЛЛЕРА И ФУНКЦИИ РОУТУ
 router.get(
     "/",
-    requireSignin,
     getPosts
 );
 
@@ -36,13 +38,22 @@ router.post(
 
 router.get(
     "/posts/by/:userId",
-    requireSignin,
     postsByUser
 );
 
+router.delete(
+    "/post/:postId",
+    requireSignin,
+    isPoster,
+    deletePost
+);
 
-// any rout containing :userId, our app will first execute userBiId()
+
+// any rout containing :userId, our app will first execute userById()
 router.param("userId", userById);
+
+// any rout containing :postId, our app will first execute userById()
+router.param("postId", postById);
 
 
 // ДЛЯ ЭКСПОРТА ОБРАБОТАННОГО ОБЬЕКТА РОУТЕР

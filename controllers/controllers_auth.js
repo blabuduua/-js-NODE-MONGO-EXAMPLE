@@ -78,5 +78,6 @@ exports.signout = (req, res) => {
 
 // ДЛЯ ПРОВЕРКИ АВТОРИЗАЦИИ
 exports.requireSignin = expressJwt({
-    secret: process.env.JWT_SECRET
+    secret: process.env.JWT_SECRET,
+    userProperty: "auth"
 });

@@ -2,6 +2,24 @@ const Post = require('../models/models_post');
 const formidable = require('formidable');
 const fs = require('fs');
 
+// ДЛЯ ВОЗВРАТА ПОСТА ПО ID
+exports.postById = (req, res, next, id) => {
+    Post.findById(id)
+        .populate("postedBy", "_id name email")
+        .exec((err, post) => {
+
+            if(err || !post){
+
+                return res.status(400).json({
+                    error: err
+                });
+            }
+
+            req.post = post;
+            next();
+        });
+};
+
 // ДЛЯ ЭКСПОРТА ФУНКЦИИ ВОЗВРАТА ВСЕХ ПОСТОВ
 exports.getPosts = (req, res) => {
     const post = Post.find()
@@ -56,6 +74,7 @@ exports.createPost = (req, res, next) => {
     });
 };
 
+// ДЛЯ ВОЗВРАТА ПОСТОВ СОЗДАННЫХ ЭТИМ ЮЗЕРОМ
 exports.postsByUser = (req, res) => {
 
     Post.find({ postedBy: req.profile._id })
@@ -73,4 +92,44 @@ exports.postsByUser = (req, res) => {
         });
 
 
+};
+
+// ДЛЯ ПРОВЕРКИ ЯВЛЯЕТСЯ ЛИ ЧЕЛОВЕК АВТОРОМ ПОСТА
+exports.isPoster = (req, res, next) => {
+
+    console.log("req.post", req.post);
+    console.log("req.auth", req.auth);
+    console.log("req.post.postedBy._id", req.post.postedBy._id);
+    console.log("req.auth._id", req.auth._id);
+
+    let isPoster = req.post && req.auth && req.post.postedBy._id == req.auth._id;
+
+
+    if(!isPoster){
+
+        return res.status(403).json({
+            error: "User is not author!"
+        });
+    }
+
+    next();
+};
+
+exports.deletePost = (req, res) => {
+
+    let post = req.post;
+
+    post.remove((err, post) => {
+
+        if(err){
+
+            return res.status(400).json({
+                error: err
+            });
+        }
+
+        res.status(200).json({
+            message: "Post deleted successfully!"
+        });
+    });
 };
