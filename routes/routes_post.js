@@ -1,8 +1,11 @@
 // ДЛЯ ПОДКЛЮЧЕНИЯ ФРЕЙМВОРКА
 const express = require('express');
 
-// ДЛЯ ПОДКЛЮЧЕНИЯ КОНТРОЛЛЕРА
-const { getPosts, createPost } = require('../controllers/controllers_post');
+// ДЛЯ ПОДКЛЮЧЕНИЯ КОНТРОЛЛЕРА ПОСТОВ
+const {
+    getPosts,
+    createPost,
+    postsByUser } = require('../controllers/controllers_post');
 
 // ДЛЯ ПОДКЛЮЧЕНИЯ ФУНКЦИИ ДЛЯ ПРОВЕРКИ АВТОРИЗИРОВАННОСТИ ПОЛЬЗОВАТЕЛЯ
 const { requireSignin } = require('../controllers/controllers_auth');
@@ -18,12 +21,28 @@ const router = express.Router();
 
 
 // ДЛЯ НАЗНАЧЕНИЯ КОНТРОЛЛЕРА И ФУНКЦИИ РОУТУ
-router.get('/', getPosts);
-router.post('/post', requireSignin, createPostValidator, createPost);
+router.get(
+    "/",
+    requireSignin,
+    getPosts
+);
+
+router.post(
+    "/post/new/:userId",
+    requireSignin,
+    createPost,
+    createPostValidator
+);
+
+router.get(
+    "/posts/by/:userId",
+    requireSignin,
+    postsByUser
+);
 
 
 // any rout containing :userId, our app will first execute userBiId()
-router.param('userId', userById);
+router.param("userId", userById);
 
 
 // ДЛЯ ЭКСПОРТА ОБРАБОТАННОГО ОБЬЕКТА РОУТЕР
