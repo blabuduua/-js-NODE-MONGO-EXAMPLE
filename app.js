@@ -22,6 +22,8 @@ const cookieParser = require('cookie-parser');
 // ДЛЯ ПОДКЛЮЧЕНИЯ EXPRESS-VALIDATOR ДЛЯ ОТЛОВА ОШИБОК ВАЛИДАЦИЙ ФОРМ
 const expressValidator = require('express-validator');
 
+// ДЛЯ ПОДКЛЮЧЕНИЯ МОДУЛЯ РАБОТЫ С ФАЙЛОВОЙ СИСТЕМОЙ
+const fs = require('fs');
 
 // ДЛЯ ПОДКЛЮЧЕНИЯ ФАЙЛА НАСТРОЕК
 const dotenv = require('dotenv');
@@ -73,6 +75,22 @@ app.use('/', routesAuth);
 
 const routesUser = require('./routes/routes_user');
 app.use('/', routesUser);
+
+// ДЛЯ ПОДКЛЮЧЕНИЯ ФАЙЛА ДОКУМЕНТАЦИИ К API
+app.get('/', (req, res) => {
+    fs.readFile('docs/apiDocs.json', (err, data) => {
+
+        if(err){
+            res.status(400).json({
+               error: err
+            });
+        }
+
+        const docs = JSON.parse(data);
+
+        res.json(docs);
+    });
+});
 
 // ДЛЯ ОБРАБОТКИ ОШИБКИ ПРИ ОТСУТСВИИ ТОКЕНА
 app.use(function (err, req, res, next) {

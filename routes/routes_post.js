@@ -8,6 +8,7 @@ const {
     postsByUser,
     postById,
     isPoster,
+    updatePost,
     deletePost } = require('../controllers/controllers_post');
 
 // ДЛЯ ПОДКЛЮЧЕНИЯ ФУНКЦИИ ДЛЯ ПРОВЕРКИ АВТОРИЗИРОВАННОСТИ ПОЛЬЗОВАТЕЛЯ
@@ -25,7 +26,7 @@ const router = express.Router();
 
 // ДЛЯ НАЗНАЧЕНИЯ КОНТРОЛЛЕРА И ФУНКЦИИ РОУТУ
 router.get(
-    "/",
+    "/posts",
     getPosts
 );
 
@@ -41,12 +42,21 @@ router.get(
     postsByUser
 );
 
+router.put(
+    "/post/:postId",
+    requireSignin,
+    isPoster,
+    updatePost
+);
+
 router.delete(
     "/post/:postId",
     requireSignin,
     isPoster,
     deletePost
 );
+
+
 
 
 // any rout containing :userId, our app will first execute userById()

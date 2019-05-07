@@ -1,6 +1,7 @@
 const Post = require('../models/models_post');
 const formidable = require('formidable');
 const fs = require('fs');
+const _ = require('lodash');
 
 // ДЛЯ ВОЗВРАТА ПОСТА ПО ID
 exports.postById = (req, res, next, id) => {
@@ -97,13 +98,7 @@ exports.postsByUser = (req, res) => {
 // ДЛЯ ПРОВЕРКИ ЯВЛЯЕТСЯ ЛИ ЧЕЛОВЕК АВТОРОМ ПОСТА
 exports.isPoster = (req, res, next) => {
 
-    console.log("req.post", req.post);
-    console.log("req.auth", req.auth);
-    console.log("req.post.postedBy._id", req.post.postedBy._id);
-    console.log("req.auth._id", req.auth._id);
-
     let isPoster = req.post && req.auth && req.post.postedBy._id == req.auth._id;
-
 
     if(!isPoster){
 
@@ -113,6 +108,26 @@ exports.isPoster = (req, res, next) => {
     }
 
     next();
+};
+
+exports.updatePost = (req, res, next) => {
+
+    let post = req.post;
+
+    post = _.extend(post, req.body);
+
+    post.updated = Date.now();
+
+    post.save(err => {
+
+        if(err){
+            return res.status(400).json({
+               error: err
+            });
+        }
+
+        res.json(post);
+    });
 };
 
 exports.deletePost = (req, res) => {
