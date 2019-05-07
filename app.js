@@ -25,6 +25,9 @@ const expressValidator = require('express-validator');
 // ДЛЯ ПОДКЛЮЧЕНИЯ МОДУЛЯ РАБОТЫ С ФАЙЛОВОЙ СИСТЕМОЙ
 const fs = require('fs');
 
+// ДЛЯ ПОДЛКЮЧЕНИЯ МОДУЛЯ КРОСС ДОМЕННОЙ ПЕРЕДАЧИ
+const cors = require('cors');
+
 // ДЛЯ ПОДКЛЮЧЕНИЯ ФАЙЛА НАСТРОЕК
 const dotenv = require('dotenv');
 dotenv.config();
@@ -66,6 +69,9 @@ app.use(cookieParser());
 // ДЛЯ ИСПОЛЬЗОВАНИЯ ПЕРЕХВАТЧИКА ОШИБОК ВАЛИДАЦИИ ФОРМ
 app.use(expressValidator());
 
+// ДЛЯ ИСПОЛЬЗОВАНИЯ МОДУЛЯ КРОСС ДОМЕННОЙ ПЕРЕДАЧИ ПРИ КАЖДОМ ЗАПРОСЕ
+app.use(cors());
+
 // ДЛЯ ПОДКЛЮЧЕНИЯ КОНТРОЛЛЕРОВ И ОПРЕДЕЛЕНИЯ РОУТОВ
 const routesPost = require('./routes/routes_post');
 app.use('/', routesPost);
@@ -76,7 +82,7 @@ app.use('/', routesAuth);
 const routesUser = require('./routes/routes_user');
 app.use('/', routesUser);
 
-// ДЛЯ ПОДКЛЮЧЕНИЯ ФАЙЛА ДОКУМЕНТАЦИИ К API
+// ДЛЯ ОТОБРАЖЕНИЯ ФАЙЛА ДОКУМЕНТАЦИИ ПО API
 app.get('/', (req, res) => {
     fs.readFile('docs/apiDocs.json', (err, data) => {
 
